@@ -78,6 +78,9 @@ class LoginController extends Controller
             $user = Auth::user();
             $userId = $user->user_id;
             session()->put('login_counter',0);
+            session()->put('myname','ushas');
+            session()->put('myhoby','splleping');
+            session()->put('ujt','abcd');
             /** ADDED FOR APP AUTH **/
             $red_url = false;
             if (isset($aRequest['app']) && $aRequest['app']){
@@ -112,15 +115,8 @@ class LoginController extends Controller
     {
         Auth::logout();
         return redirect('/');
-    }
-      
-    public function homePage($days=1)
-    {       
-        return view('dashboard',
-                [     
-                ]
-        );
-    }
+    }      
+    
     
     public function accessDenied()
     {

@@ -1,13 +1,14 @@
 @extends('layout.layout')
 
 <?php
-$formHeadding = 'Dashboard';
+$formHeadding = 'Add/Edit User';
 ?>
 @section('title')
 {{$formHeadding}}
 @endsection
 @section('content')
 @include('show-message')
+
 
 
 <a href="{{site_url('/')}}" >Home</a><br>

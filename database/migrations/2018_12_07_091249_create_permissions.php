@@ -17,13 +17,18 @@ class CreatePermissions extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('display_name')->nullable();
-            $table->string('description')->nullable();
+            $table->text('user_role_ids')->comment('comma separated values');    
+            $table->text('user_group_ids')->comment('comma separated values');    
+            $table->text('users_ids')->comment('comma separated values');     
             $table->string('module', 150)->nullable();
             $table->string('controller', 200)->nullable();
             $table->string('action', 200)->nullable();
             $table->timestamps();
         });
     }
+    
+
+
 
     /**
      * Reverse the migrations.
